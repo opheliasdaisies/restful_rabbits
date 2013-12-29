@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require './lib/rabbit'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}.rabbits.db')
 

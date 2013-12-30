@@ -53,8 +53,6 @@ GEM
     do_sqlite3 (0.10.13)
       data_objects (= 0.10.13)
     fastercsv (1.5.5)
-    haml (4.0.4)
-      tilt
     json (1.8.1)
     json_pure (1.8.1)
     multi_json (1.8.2)
@@ -92,7 +90,6 @@ PLATFORMS
 DEPENDENCIES
   data_mapper
   dm-sqlite-adapter
-  haml
   shotgun
   sinatra
   tux

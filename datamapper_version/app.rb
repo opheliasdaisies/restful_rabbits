@@ -2,16 +2,16 @@ require 'bundler'
 Bundler.require
 require './lib/rabbit'
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}.rabbits.db')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/rabbits.db")
 
 get '/rabbits' do
   @rabbits = Rabbit.all
-  haml :index  
+  erb :index  
 end
 
 get '/rabbits/new' do
   @rabbit = Rabbit.new
-  haml :new
+  erb :new
 end
 
 post '/rabbits' do
@@ -21,13 +21,13 @@ post '/rabbits' do
     redirect '/rabbits/' + @rabbit.id.to_s
   else
     status 400
-    haml :new
+    erb :new
   end
 end
 
 get '/rabbits/edit/:id' do
   @rabbit = Rabbit.get(params[:id])
-  haml :edit
+  erb :edit
 end
 
 put '/rabbits/:id' do
@@ -37,13 +37,13 @@ put '/rabbits/:id' do
     redirect '/rabbits/' + params[:id]
   else
     status 400
-    haml :edit
+    erb :edit
   end
 end
 
 get '/rabbits/delete/:id' do
   @rabbit = Rabbit.get(params[:id])
-  haml :delete
+  erb :delete
 end
 
 delete '/rabbits/:id/' do
@@ -53,7 +53,7 @@ end
 
 get '/rabbits/:id' do
   @rabbit = Rabbit.get(params[:id])
-  haml :show
+  erb :show
 end
 
 DataMapper.auto_upgrade!

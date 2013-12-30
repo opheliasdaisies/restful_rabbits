@@ -1,0 +1,8 @@
+<%= erb :errors, :layout => false %>
+<form action="/rabbits" method="POST">
+  <fieldset>
+    <legend>Create a new rabbit</legend>
+    <%= erb :form, :layout => false %>
+  </fieldset>
+  <input type="submit" value="Create"> or <a href="/rabbits">Cancel</a>
+</form>

@@ -1,7 +1,7 @@
 <h3>Rabbits</h3>
 <a href="/rabbits/new">Create a new rabbit</a>
 <% unless @rabbits.empty? %>
-  <ul>
+  <ul id="rabbits">
     <% @rabbits.each do |rabbit| %>
       <li>
         <% {:id => "rabbit-#{rabbit.id}"} %>

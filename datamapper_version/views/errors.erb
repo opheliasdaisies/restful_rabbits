@@ -1,0 +1,7 @@
+<% if @rabbit.errors.any? %>
+  <ul id="errors">
+    <% @rabbit.errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>

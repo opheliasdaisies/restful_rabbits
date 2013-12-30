@@ -32,7 +32,7 @@ end
 
 put '/rabbits/:id' do
   @rabbit = Rabbit.get(params[:id])
-  if @rabbit.update(params[:id])
+  if @rabbit.update(params[:rabbit])
     status 201
     redirect '/rabbits/' + params[:id]
   else
@@ -46,9 +46,9 @@ get '/rabbits/delete/:id' do
   erb :delete
 end
 
-delete '/rabbits/:id/' do
+delete '/rabbits/:id' do
   Rabbit.get(params[:id]).destroy
-  redirect '/rabbits'
+  redirect '/rabbits'  
 end
 
 get '/rabbits/:id' do

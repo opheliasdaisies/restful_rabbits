@@ -1,9 +1,9 @@
-<%= erb :errors, layout => false %>
+<%= erb :errors, :layout => false %>
 <form action="/rabbits/<%= @rabbit.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT">
   <fieldset>
     <legend>Update this rabbit</legend>
-    <%= erb :form, layout => false %>
+    <%= erb :form, :layout => false %>
   </fieldset>
   <input type="submit" value="Update"> or <a href="/rabbits">Cancel</a>
 </form>

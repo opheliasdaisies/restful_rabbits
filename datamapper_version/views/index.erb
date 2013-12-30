@@ -6,7 +6,7 @@
       <li>
         <% {:id => "rabbit-#{rabbit.id}"} %>
         <a href="/rabbits/<%=rabbit.id%>"><%=rabbit.name%></a>
-        <a href="/rabbits/edit<%=rabbit.id%>">EDIT</a>
+        <a href="/rabbits/edit/<%=rabbit.id%>">EDIT</a>
         <a href="/rabbits/delete/<%=rabbit.id%>">DELETE</a>
       </li>
     <% end %>

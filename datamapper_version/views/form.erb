@@ -4,7 +4,7 @@
 <label for="color">Color:</label>
 <select id="quantity" name="rabbit[color]">
   <% %w[black white gray brown].each do |color| %>
-    <option value="<%= color %>" selected="<%= true if color == @rabbit.color %>"><%= color %></option>
+    <option value="<%= color %>" <%= "selected" if color == @rabbit.color %>><%= color %></option>
   <% end %>
 </select>
 

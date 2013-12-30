@@ -1,0 +1,15 @@
+<label for="name">Name:</label>
+<input id="name" type="text" name="rabbit[name]" value="<%= @rabbit.name %>">
+
+<label for="color">Color:</label>
+<select id="quantity" name="rabbit[color]">
+  <% %w[black white gray brown].each do |color| %>
+    <option value="<%= color %>" selected="<%= true if color == @rabbit.color %>"><%= color %></option>
+  <% end %>
+</select>
+
+<label for="description">Description:</label>
+<textarea id="description" name="rabbit[description]"><%= @rabbit.description %></textarea>
+
+<label for="quantity">Age:</label>
+<input id="age" type="text" name="rabbit[age]" value="<%= @rabbit.age %>">
